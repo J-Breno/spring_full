@@ -1,5 +1,6 @@
-package com.github.jbreno.gestao_vagas.modules.candidate;
+package com.github.jbreno.gestao_vagas.modules.candidate.repositories;
 
+import com.github.jbreno.gestao_vagas.modules.candidate.entites.CandidateEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

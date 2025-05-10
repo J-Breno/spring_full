@@ -1,6 +1,6 @@
 package com.github.jbreno.gestao_vagas.modules.candidate.controllers;
 
-import com.github.jbreno.gestao_vagas.modules.candidate.CandidateEntity;
+import com.github.jbreno.gestao_vagas.modules.candidate.entites.CandidateEntity;
 import com.github.jbreno.gestao_vagas.modules.candidate.useCases.CreateCandidateUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,4 +1,4 @@
-package com.github.jbreno.gestao_vagas.modules.candidate;
+package com.github.jbreno.gestao_vagas.modules.candidate.entites;
 
 
 import jakarta.persistence.*;

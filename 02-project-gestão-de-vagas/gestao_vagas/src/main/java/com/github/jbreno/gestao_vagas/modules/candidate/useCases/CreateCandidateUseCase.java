@@ -1,8 +1,8 @@
 package com.github.jbreno.gestao_vagas.modules.candidate.useCases;
 
 import com.github.jbreno.gestao_vagas.exceptions.UserFoundException;
-import com.github.jbreno.gestao_vagas.modules.candidate.CandidateEntity;
-import com.github.jbreno.gestao_vagas.modules.candidate.CandidateRepository;
+import com.github.jbreno.gestao_vagas.modules.candidate.entites.CandidateEntity;
+import com.github.jbreno.gestao_vagas.modules.candidate.repositories.CandidateRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
