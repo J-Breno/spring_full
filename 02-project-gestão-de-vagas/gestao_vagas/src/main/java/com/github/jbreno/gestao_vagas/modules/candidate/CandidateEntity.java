@@ -1,16 +1,22 @@
 package com.github.jbreno.gestao_vagas.modules.candidate;
 
 
+import jakarta.persistence.*;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import org.hibernate.annotations.CreationTimestamp;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Data
+@Entity
+@Table(name = "tb_candidate")
 public class CandidateEntity {
+    @Id
     private UUID id;
     private String name;
     @NotBlank()
@@ -22,4 +28,7 @@ public class CandidateEntity {
     private String email;
     private String description;
     private String curriculum;
+
+    @CreationTimestamp
+    private LocalDateTime createdAt;
 }
