@@ -1,5 +1,6 @@
 package com.github.jbreno.gestao_vagas.modules.candidate.controllers;
 
+import com.github.jbreno.gestao_vagas.exceptions.UserFoundException;
 import com.github.jbreno.gestao_vagas.modules.candidate.CandidateEntity;
 import com.github.jbreno.gestao_vagas.modules.candidate.CandidateRepository;
 import jakarta.validation.Valid;
@@ -18,6 +19,11 @@ public class CandidateController {
 
     @PostMapping("/")
     public CandidateEntity create(@Valid @RequestBody CandidateEntity candidate) {
+        candidateRepository
+                .findByUsernameOrEmail(candidate.getUsername(), candidate.getEmail())
+                .ifPresent(user -> {
+                    throw new UserFoundException();
+                });
         return candidateRepository.save(candidate);
     }
 }
