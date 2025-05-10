@@ -1,7 +1,7 @@
 package com.github.jbreno.gestao_vagas.modules.company.controllers;
 
-import com.github.jbreno.gestao_vagas.modules.company.entities.CompanyEntity;
-import com.github.jbreno.gestao_vagas.modules.company.useCases.CreateCompanyUseCase;
+import com.github.jbreno.gestao_vagas.modules.company.entities.JobEntity;
+import com.github.jbreno.gestao_vagas.modules.company.useCases.CreateJobUseCase;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -11,15 +11,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(path = "/company")
-public class CompanyController {
+@RequestMapping(path = "/job")
+public class JobController {
     @Autowired
-    private CreateCompanyUseCase createCompanyUseCase;
+    private CreateJobUseCase createJobUseCase;
 
     @PostMapping
-    public ResponseEntity<Object> create(@RequestBody @Valid CompanyEntity company) {
+    public ResponseEntity<Object> create(@RequestBody @Valid JobEntity job) {
         try{
-           var result = createCompanyUseCase.execute(company);
+           var result = createJobUseCase.execute(job);
            return ResponseEntity.ok(result);
         } catch (Exception e){
             return ResponseEntity.badRequest().body(e.getMessage());
